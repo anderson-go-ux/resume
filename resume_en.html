@@ -7,252 +7,109 @@
     <style>
         body {
             font-family: 'Courier New', Courier, monospace;
-            background-color: black;
-            color: #fff;
+            background-color: #f0f0f0; /* Light gray background */
+            color: #333; /* Dark gray text */
             margin: 0;
             padding: 0;
         }
-    
+
         .container {
             width: 85%;
             max-width: 900px;
             margin: 0 auto;
             padding: 20px;
-            z-index: 1; /* Set for content so it doesn't overlap with the animation */
         }
-    
+
         h1 {
-            color: #00ff00;
+            color: #007bff; /* Blue heading */
             font-size: 32px;
             text-align: center;
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            text-shadow: 0 0 10px #fff;
         }
-    
+
         h2 {
-            color: #00ff00;
+            color: #007bff; /* Blue heading */
             font-size: 24px;
-            border-bottom: 1px solid #00ff00;
+            border-bottom: 1px solid #007bff; /* Blue underline */
             padding-bottom: 10px;
             margin-top: 30px;
         }
-    
+
         h3 {
-            color: #00ff00;
+            color: #007bff; /* Blue heading */
         }
-    
+
         ul {
             list-style-type: none;
             padding-left: 0;
         }
-    
+
         ul li {
             margin-bottom: 10px;
             line-height: 1.5;
-        }
-    
-        @keyframes textHighlight {
-            0% {
-                transform: skew(0deg);
-                color: #fff;
-                filter: brightness(1);
-            }
-            90% {
-                transform: skew(0deg);
-                color: #fff;
-                filter: brightness(1);
-            }
-            90.5% {
-                transform: skew(90deg);
-                color: #00ff00;
-                filter: brightness(1);
-            }
-            90.9% {
-                transform: skew(0deg);
-                color: #fff;
-                filter: brightness(1);
-            }
-            98.1% {
-                transform: skew(0deg);
-                color: #fff;
-                filter: brightness(1);
-            }
-            99.5% {
-                transform: skew(40deg);
-                color: #00ff00;
-                filter: brightness(1);
-            }
-            100% {
-                transform: skew(0deg);
-                color: #fff;
-                filter: brightness(1);
-            }
-        }
-
-        .highlight {
-            display: inline-block;
-            animation: textHighlight 3s infinite linear;
-        }
-        .highlight:nth-child(1) {
-            animation-delay: 1s;
-        }
-
-        .highlight:nth-child(2) {
-            animation-delay: 2s;
-        }
-
-        .highlight:nth-child(3) {
-            animation-delay: 0.5s;
-        }
-
-        .highlight:nth-child(4) {
-            animation-delay: 3s;
-        }
-    
-        .matrix-stream {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            overflow: hidden;
-            z-index: -1;
-        }
-    
-        .matrix-stream > div {
-            height: 100%;
-        }
-    
-        .matrix-stream > div > span {
-            display: inline-block;
-            color: #00ff00;
-            font-size: 14px;
-            opacity: 0;
-            animation: fall linear infinite;
-            position: absolute;
-            height: 100%;
-        }
-        .matrix-column {
-            position: absolute;
-        }
-    
-        @keyframes fall {
-            0% {
-                opacity: 0;
-                transform: translateY(-100%);
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-                transform: translateY(100%);
-            }
-        }
-    
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-    
-        ::-webkit-scrollbar-track {
-            box-shadow: inset 0 0 5px grey;
-            border-radius: 10px;
-        }
-    
-        ::-webkit-scrollbar-thumb {
-            background: #00ff00;
-            border-radius: 10px;
-        }
-    
-        ::-webkit-scrollbar-thumb:hover {
-            background: #00ff00;
-        }
-
-        .text-container {
-            font-size: 24px;
-            font-weight: bold;
-            float: right;
-        }
-
-        .cursor {
-            display: inline-block;
-            width: 10px;
-            background-color: white;
-            animation: blink 0.8s step-end infinite;
-        }
-
-        @keyframes blink {
-            50% {
-                opacity: 0;
-            }
-        }
-
-        .text {
-            white-space: nowrap;
-            overflow: hidden;
-            width: 0;
-            animation: typing 4s steps(24) 1s forwards;
-        }
-
-        .second-text .text {
-            display: none;
-            animation: typing 0s steps(24) 0s forwards;
-        }
-
-        @keyframes typing {
-            to {
-                width: 100%;
-            }
         }
 
         .bold {
             font-weight: bold;
         }
-    </style>
-    
+
+        .section { /* Added to make styling sections easier */
+            margin-bottom: 20px;
+        }
+
+        /*  No matrix animation for professional resume  */
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px #aaa; /* Lighter gray */
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #007bff; /* Blue scrollbar */
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0056b3; /* Darker blue on hover */
+        }
+     </style>
+
 </head>
 <body>
-    <div class="matrix-stream">
-        <!-- Generating random characters for the visual effect -->
-    </div>
-
     <div class="container">
-        <h1>Senior Backend Engineer</h1>
-        <div class="text-container">
-            <span class="text"></span><span class="cursor">|</span>
-        </div>
-        <div class="text-container second-text">
-            <span class="text">Knock, knock, Neo.</span>
-        </div>
+        <h1>Senior Backend Engineer | Microservices & Highload Systems</h1>
 
         <div class="contact-info section">
             <h2>Contact Information</h2>
             <ul>
                 <li><span class="bold">Age:</span> 36 years (June 9, 1988)</li>
-                <li><span class="bold">Location:</span> Yerevan</li>
-                <li><span class="bold">Ready to relocate:</span> Europe, USA</li>
-                <li><span class="bold">Citizenship:</span> Armenia</li>
-                <li><span class="bold">Phone:</span> +374 (77) 089753</li>
-                <li><span class="bold">Telegram:</span> @superslimfeel</li>
-                <li><span class="bold">Email:</span> artur.yudin@gmail.com</li>
+                <li><span class="bold">Location:</span> Yerevan, Armenia</li>
+                <li><span class="bold">Ready to relocate:</span> Worldwide</li>
+                <li><span class="bold">Citizenship:</span> Republic of Armenia</li>
+                <li><span class="bold">Phone:</span> <a href="tel:+37477089753">+374 77 089753</a></li>
+                <li><span class="bold">Telegram:</span> <a href="https://t.me/superslimfeel">@superslimfeel</a></li>
+                <li><span class="bold">Email:</span> <a href="mailto:artur.yudin.88@gmail.com">artur.yudin.88@gmail.com</a></li>
             </ul>
         </div>
 
         <div class="expected-conditions section">
             <h2>Expected Conditions</h2>
-            <p class="highlight"><span class="bold">Expected Monthly Salary:</span> 6000 USD</p>
-            <p><span class="bold">Employment Type:</span> Full-time, Remote</p>
-            <p><span class="bold">Schedule:</span> Full-time, Flexible</p>
+            <p><span class="bold">Expected Monthly Salary (Net):</span> 4000 USD</p>
+            <p><span class="bold">Employment Type:</span> Full-time, Remote/Office</p>
         </div>
 
         <div class="skills section">
             <h2>Key Skills</h2>
             <ul>
-                <li><span class="bold">Programming Languages:</span> <span class="highlight">Go (4+ years)</span>, <span class="highlight">TypeScript/Node.js/JavaScript (3+ years)</span>, <span class="highlight">Python (1+ year)</span>, Unix Shell, Ruby</li>
-                <li><span class="bold">Databases:</span> <span class="highlight">PostgreSQL</span>, <span class="highlight">Elasticsearch</span>, Redis, MongoDB, ClickHouse (basic)</li>
-                <li><span class="bold">Technologies and Tools:</span> Git, <span class="highlight">Docker</span>, <span class="highlight">Kubernetes</span>, <span class="highlight">gRPC</span>, <span class="highlight">GitLab CI/CD</span>, Kafka, <span class="highlight">Zabbix</span>, ELK, <span class="highlight">Prometheus</span>, <span class="highlight">Grafana</span>, <span class="highlight">Jira</span></li>
+                <li><span class="bold">Programming Languages:</span> Go (4+ years), TypeScript/Node.js/JavaScript (3+ years), Python (1+ year), Unix Shell, Ruby</li>
+                <li><span class="bold">Databases:</span> PostgreSQL, Elasticsearch, Redis, MongoDB, ClickHouse (basic)</li>
+                <li><span class="bold">Technologies and Tools:</span> Git, Docker, Kubernetes, gRPC, GitLab CI/CD, Kafka, Zabbix, ELK, Prometheus, Grafana, Jira</li>
                 <li><span class="bold">Architecture & Design:</span> Microservice Architecture, High Load Systems, OOP (Object-Oriented Programming)</li>
                 <li><span class="bold">Testing:</span> Unit Testing, Integration Testing, E2E (End-to-End) Testing, TDD (Test Driven Development)</li>
                 <li><span class="bold">Development Methods:</span> GitLab CI/CD (Continuous Integration/Continuous Delivery)</li>
@@ -268,37 +125,37 @@
                 Senior Backend Engineer — <span class="bold">Wildberries Marketplace</span> (October 2023 — June 2024)
             </h3>
             <ul>
-                <li>Developed an authentication system in <span class="highlight">Go</span> using a microservice architecture. <span class="highlight">The system handles 10,000 - 50,000 requests per second during peak loads</span>.</li>
-                <li>Integrated with OAuth providers (VK, Google, Yandex). <span class="highlight">Over 50% of users authenticate via OAuth</span>.</li>
-                <li>Refactored and optimized code. <span class="highlight">Reduced response time by 30% by optimizing database queries</span>.</li>
-                <li>Developed service endpoints in <span class="highlight">Go</span>.</li>
-                <li>Set up CI/CD for stage/prod using <span class="highlight">GitLab CI/CD</span>. <span class="highlight">Reduced deployment time from 2 hours to 15 minutes</span>. Deployed in <span class="highlight">Kubernetes</span>.</li>
-                <li>Maintained documentation and tests. <span class="highlight">Increased test coverage to 90%</span>.</li>
-                <li>Participated in on-call duties, monitoring with <span class="highlight">Zabbix</span>, <span class="highlight">Prometheus</span>, and <span class="highlight">Grafana</span>.</li>
+                <li>Developed an authentication system in Go using a microservice architecture. The system handles 10,000 - 50,000 requests per second during peak loads.</li>
+                <li>Integrated with OAuth providers (VK, Google, Yandex). Over 50% of users authenticate via OAuth.</li>
+                <li>Refactored and optimized code. Reduced response time by 30% by optimizing database queries.</li>
+                <li>Developed service endpoints in Go.</li>
+                <li>Set up CI/CD for stage/prod using GitLab CI/CD. Reduced deployment time from 2 hours to 15 minutes. Deployed in Kubernetes.</li>
+                <li>Maintained documentation and tests. Increased test coverage to 90%.</li>
+                <li>Participated in on-call duties, monitoring with Zabbix, Prometheus, and Grafana.</li>
             </ul>
 
             <h3>
                 Senior Backend Engineer — <span class="bold">MAG Development</span> (March 2022 — March 2023)
             </h3>
             <ul>
-                <li>Developed a high-load authorization system in <span class="highlight">Go</span> using a microservice architecture. <span class="highlight">Handles up to 10,000 requests per second.</span></li>
+                <li>Developed a high-load authorization system in Go using a microservice architecture. Handles up to 10,000 requests per second.</li>
                 <li>Optimized data storage using Redis and PostgreSQL.</li>
                 <li>Implemented inter-service communication via gRPC.</li>
                 <li>Implemented CI/CD pipelines using Docker and Git.</li>
                 <li>
                     <span class="bold">Task Example 1:</span> Developed a user session management service.
                     <ul>
-                        <li><span class="highlight">Implemented a service in Go that manages user sessions, including session creation, validation, and termination.</span></li>
+                        <li>Implemented a service in Go that manages user sessions, including session creation, validation, and termination.</li>
                         <li>Utilized Redis for fast session data retrieval and PostgreSQL for persistent storage of user data.</li>
-                        <li><span class="highlight">The service improved login response times by 40% and supported high concurrency.</span></li>
+                        <li>The service improved login response times by 40% and supported high concurrency.</li>
                     </ul>
                 </li>
                 <li>
                     <span class="bold">Task Example 2:</span> Implemented a two-factor authentication (2FA) service.
                     <ul>
-                        <li><span class="highlight">Developed a 2FA service in Go, integrating it with the existing authorization system.</span></li>
+                        <li>Developed a 2FA service in Go, integrating it with the existing authorization system.</li>
                         <li>Used TOTP (Time-Based One-Time Password) algorithm for generating one-time passwords.</li>
-                        <li><span class="highlight">Enhanced security by requiring 2FA for sensitive operations, reducing unauthorized access incidents by 95%.</span></li>
+                        <li>Enhanced security by requiring 2FA for sensitive operations, reducing unauthorized access incidents by 95%.</li>
                     </ul>
                 </li>
             </ul>
@@ -307,24 +164,24 @@
                 Senior Backend Engineer — <span class="bold">Kaspersky Lab</span> (March 2021 — March 2022)
             </h3>
             <ul>
-                <li>Developed the backend part of the TAL project in <span class="highlight">Go</span>.</li>
-                <li>Used <span class="highlight">Elasticsearch</span> for storing and analyzing the security events.</li>
+                <li>Developed the backend part of the TAL project in Go.</li>
+                <li>Used Elasticsearch for storing and analyzing the security events.</li>
                 <li>Supported and improved existing products.</li>
                 <li>Successfully delivered a new project.</li>
                 <li>
                     <span class="bold">Task Example 1:</span> Developed a security event aggregation and analysis module.
                     <ul>
-                        <li><span class="highlight">Created a module in Go that aggregates security events from various sources and stores them in Elasticsearch.</span></li>
+                        <li>Created a module in Go that aggregates security events from various sources and stores them in Elasticsearch.</li>
                         <li>Implemented real-time analysis and alerting based on predefined security rules.</li>
-                        <li><span class="highlight">The module improved threat detection capabilities by 60% and reduced the time to detect critical security incidents.</span></li>
+                        <li>The module improved threat detection capabilities by 60% and reduced the time to detect critical security incidents.</li>
                     </ul>
                 </li>
                 <li>
                     <span class="bold">Task Example 2:</span> Optimized the performance of an existing security event processing pipeline.
                     <ul>
-                        <li><span class="highlight">Refactored parts of the pipeline in Go to improve processing speed and reduce latency.</span></li>
+                        <li>Refactored parts of the pipeline in Go to improve processing speed and reduce latency.</li>
                         <li>Implemented caching mechanisms and optimized Elasticsearch queries.</li>
-                        <li><span class="highlight">Achieved a 50% reduction in event processing time and improved overall system responsiveness.</span></li>
+                        <li>Achieved a 50% reduction in event processing time and improved overall system responsiveness.</li>
                     </ul>
                 </li>
             </ul>
@@ -333,17 +190,17 @@
                 Backend Engineer — <span class="bold">IP Chain</span> (June 2019 — March 2021)
             </h3>
             <ul>
-                <li>Transitioned from a monolith to a microservice architecture in <span class="highlight">Go</span>.</li>
+                <li>Transitioned from a monolith to a microservice architecture in Go.</li>
                 <li>Optimized CI/CD.</li>
                 <li>Developed an image recognition algorithm using neural networks.</li>
-                <li>Developed API tools for managing the Chrome browser in <span class="highlight">Go</span>.</li>
-                <li>Optimized database architecture (PostgreSQL). <span class="highlight">Reduced response time by 50%</span>.</li>
+                <li>Developed API tools for managing the Chrome browser in Go.</li>
+                <li>Optimized database architecture (PostgreSQL). Reduced response time by 50%.</li>
                 <li>
                     <span class="bold">Interesting Task:</span> Developed a distributed task queue system for background processing.
                     <ul>
-                        <li><span class="highlight">Implemented a distributed task queue system in Go using Kafka as a message broker.</span></li>
+                        <li>Implemented a distributed task queue system in Go using Kafka as a message broker.</li>
                         <li>Created worker services in Go that consumed tasks from the queue and performed various background processing operations, such as data synchronization and report generation.</li>
-                        <li><span class="highlight">The system significantly improved the efficiency of background processing, reducing the average task completion time by 70% and enabling the handling of a larger volume of tasks.</span></li>
+                        <li>The system significantly improved the efficiency of background processing, reducing the average task completion time by 70% and enabling the handling of a larger volume of tasks.</li>
                     </ul>
                 </li>
             </ul>
@@ -352,9 +209,9 @@
                 Lead Backend Engineer — <span class="bold">Insight Agency</span> (April 2017 — September 2018)
             </h3>
             <ul>
-                <li>Developed high-load backend systems for websites: cni.ru, theartofshaving.ru, ch1ef.ru in <span class="highlight">Node.js (TypeScript)</span>. <span class="highlight">The websites served up to 50,000 unique visitors per day.</span></li>
-                <li>Created booking systems and APIs for integration with external services in <span class="highlight">Node.js (TypeScript)</span>. <span class="highlight">The developed APIs handled up to 1,000 requests per minute.</span></li>
-                <li><span class="highlight">Led a team of 5 developers.</span> <span class="highlight">Increased team productivity by 30% by implementing Agile methodologies and using <span class="highlight">Jira</span> for task management.</span></li>
+                <li>Developed high-load backend systems for websites: cni.ru, theartofshaving.ru, ch1ef.ru in Node.js (TypeScript). The websites served up to 50,000 unique visitors per day.</li>
+                <li>Created booking systems and APIs for integration with external services in Node.js (TypeScript). The developed APIs handled up to 1,000 requests per minute.</li>
+                <li>Led a team of 5 developers. Increased team productivity by 30% by implementing Agile methodologies and using Jira for task management.</li>
             </ul>
         </div>
 
@@ -367,7 +224,7 @@
                     <ul>
                         <li>Used Scrapy to collect data from websites.</li>
                         <li>Stored data in PostgreSQL for further analysis.</li>
-                        <li><span class="highlight">Automated the data collection process, saving up to 20 hours per week.</span></li>
+                        <li>Automated the data collection process, saving up to 20 hours per week.</li>
                     </ul>
                 </li>
                 <li>
@@ -376,7 +233,7 @@
                     <ul>
                         <li>Used Pandas to process and analyze purchase data.</li>
                         <li>Applied machine learning algorithms from Scikit-learn to build a recommendation model.</li>
-                        <li><span class="highlight">The implementation of the system increased the average order value by 15%.</span></li>
+                        <li>The implementation of the system increased the average order value by 15%.</li>
                     </ul>
                 </li>
             </ul>
@@ -388,87 +245,17 @@
             <p>Faculty: Software for Computer Systems and Automated Systems (Incomplete higher education)</p>
         </div>
 
-        <div class="about section">
-            <h2>About Me</h2>
-            <p>I strive for continuous development and learning new technologies. I am interested in projects related to high-load systems and big data. I am passionate about exploring human capabilities and how technology can help expand them.</p>
+        <div class="summary section">
+            <h2>Professional Summary</h2>
+            <p>
+                Senior Backend Engineer with 7+ years of experience in designing, developing, and maintaining high-load, scalable systems, primarily using Go. Proven ability to build and optimize microservice architectures,  improve application performance, and ensure system security.  Experienced in leading development teams and implementing CI/CD best practices. Seeking a challenging role where I can leverage my expertise in backend development and contribute to building innovative and robust solutions.
+            </p>
         </div>
 
         <div class="recommendations section">
             <h2>Recommendations</h2>
-            <ul>
-                <li><span class="bold">Daniil Protsenko</span>, Senior Architect, Kaspersky Lab</li>
-                <li><span class="bold">Vladimir Grishin</span>, Lead Backend Engineer, IP Chain</li>
-                <li><span class="bold">Zhanna Gittelson</span>, Project Manager, Insight Agency</li>
-            </ul>
+            <p>References available upon request.</p>
         </div>
     </div>
-
-    <script>
-        const streamContainer = document.querySelector('.matrix-stream');
-    
-        // Function to generate a random number within a given range
-        const random = (min, max) => Math.random() * (max - min) + min;
-    
-        // Create streams of characters
-        const fragment = document.createDocumentFragment(); // Fragment for a single addition
-    
-        for (let i = 0; i < 80; i++) {
-            const column = document.createElement('div');
-            column.classList.add('matrix-column');
-            column.style.left = `${random(0, 100)}%`;
-            column.style.animationDelay = `${random(0, 10)}s`;
-    
-            const charFragment = document.createDocumentFragment(); // Fragment for characters
-            for (let j = 0; j < 20; j++) {
-                const char = document.createElement('span');
-                char.textContent = String.fromCharCode(0x30A0 + random(0, 96));
-                char.classList.add('matrix-char'); // Add a class instead of inline style
-                char.style.animationDuration = `${random(3, 53)}s`;
-                charFragment.appendChild(char);
-            }
-            column.appendChild(charFragment);
-            fragment.appendChild(column);
-        }
-    
-        streamContainer.appendChild(fragment); // Add everything at once
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const firstTextElement = document.querySelector('.text');
-            const secondTextElement = document.querySelector('.second-text .text');
-            const cursorElement = document.querySelector('.cursor');
-            
-            const text1 = 'Follow the white rabbit.';
-            
-            let i = 0;
-
-            function typeText(element, text, callback) {
-                let j = 0;
-                function type() {
-                    if (j < text.length) {
-                        element.textContent += text.charAt(j);
-                        j++;
-                        setTimeout(type, 50);
-                    } else if (callback) {
-                        callback();
-                    }
-                }
-                type();
-            }
-
-            function beep() {
-                var snd = new Audio("data:audio/wav;base64,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qJrx4KOQjahZxWbcZgztj2c49nKmkId44S71j0c8eV9yDK6uPRzx5X18eDvjvQ6yKo9ZSS6l//8elePK/Lf//IInrOF/FvDoADYAGBMGb7FtErm5MXMlmPAJQVgWta7Zx2go+8xJ0UiCb8LHHdftWyLJE0QIAIsI+UbXu67dZMjmgDGCGl1H+vpF4NSDckSIkk7Vd+sxEhBQMRU8j/12UIRhzSaUdQ+rQU5kGeFxm+hb1oh6pWWmv3uvmReDl0UnvtapVaIzo1jZbf/pD6ElLqSX+rUmOQNpJFa/r+sa4e/pBlAABoAAAAA3CUgShLdGIxsY7AUABPRrgCABdDuQ5GC7DqPQCgbbJUAoRSUj+NIEig0YfyWUho1VBBBA//uQZB4ABZx5zfMakeAAAAmwAAAAF5F3P0w9GtAAACfAAAAAwLhMDmAYWMgVEG1U0FIGCBgXBXAtfMH10000EEEEEECUBYln03TTTdNBDZopopYvrTTdNa325mImNg3TTPV9q3pmY0xoO6bv3r00y+IDGid/9aaaZTGMuj9mpu9Mpio1dXrr5HERTZSmqU36A3CumzN/9Robv/Xx4v9ijkSRSNLQhAWumap82WRSBUqXStV/YcS+XVLnSS+WLDroqArFkMEsAS+eWmrUzrO0oEmE40RlMZ5+ODIkAyKAGUwZ3mVKmcamcJnMW26MRPgUw6j+LkhyHGVGYjSUUKNpuJUQoOIAyDvEyG8S5yfK6dhZc0Tx1KI/gviKL6qvvFs1+bWtaz58uUNnryq6kt5RzOCkPWlVqVX2a/EEBUdU1KrXLf40GoiiFXK///qpoiDXrOgqDR38JB0bw7SoL+ZB9o1RCkQjQ2CBYZKd/+VJxZRRZlqSkKiws0WFxUyCwsKiMy7hUVFhIaCrNQsKkTIsLivwKKigsj8XYlwt/WKi2N4d//uQRCSAAjURNIHpMZBGYiaQPSYyAAABLAAAAAAAACWAAAAApUF/Mg+0aohSIRobBAsMlO//Kk4soosy1JSFRYWaLC4qZBYWFRGZdwqKiwkNBVmoWFSJkWFxX4FFRQWR+LsS4W/rFRb/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////VEFHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAU291bmRib3kuZGUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMjAwNGh0dHA6Ly93d3cuc291bmRib3kuZGUAAAAAAAAAACU=");  
-                snd.play();
-            }
-
-            typeText(firstTextElement, text1, function() {
-                setTimeout(function() {
-                    firstTextElement.style.display = 'none';
-                    beep();
-                    secondTextElement.style.display = 'block';
-                    new Promise(resolve => setTimeout(beep, 333));
-                }, 3000);
-            });
-        });
-    </script>
 </body>
 </html>
