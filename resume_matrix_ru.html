@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме - Артур Юдин</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: black;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+    
+        .container {
+            width: 85%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            z-index: 1; /* Set for content so it doesn't overlap with the animation */
+        }
+    
+        h1 {
+            color: #00ff00;
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px #fff;
+        }
+    
+        h2 {
+            color: #00ff00;
+            font-size: 24px;
+            border-bottom: 1px solid #00ff00;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+    
+        h3 {
+            color: #00ff00;
+        }
+    
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+    
+        ul li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+    
+        @keyframes textHighlight {
+            0% {
+                transform: skew(0deg);
+                color: #fff;
+                filter: brightness(1);
+            }
+            90% {
+                transform: skew(0deg);
+                color: #fff;
+                filter: brightness(1);
+            }
+            90.5% {
+                transform: skew(90deg);
+                color: #00ff00;
+                filter: brightness(1);
+            }
+            90.9% {
+                transform: skew(0deg);
+                color: #fff;
+                filter: brightness(1);
+            }
+            98.1% {
+                transform: skew(0deg);
+                color: #fff;
+                filter: brightness(1);
+            }
+            99.5% {
+                transform: skew(40deg);
+                color: #00ff00;
+                filter: brightness(1);
+            }
+            100% {
+                transform: skew(0deg);
+                color: #fff;
+                filter: brightness(1);
+            }
+        }
+
+        .highlight {
+            display: inline-block;
+            animation: textHighlight 3s infinite linear;
+        }
+        .highlight:nth-child(1) {
+            animation-delay: 1s;
+        }
+
+        .highlight:nth-child(2) {
+            animation-delay: 2s;
+        }
+
+        .highlight:nth-child(3) {
+            animation-delay: 0.5s;
+        }
+
+        .highlight:nth-child(4) {
+            animation-delay: 3s;
+        }
+    
+        .matrix-stream {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            overflow: hidden;
+            z-index: -1;
+        }
+    
+        .matrix-stream > div {
+            height: 100%;
+        }
+    
+        .matrix-stream > div > span {
+            display: inline-block;
+            color: #00ff00;
+            font-size: 14px;
+            opacity: 0;
+            animation: fall linear infinite;
+            position: absolute;
+            height: 100%;
+        }
+        .matrix-column {
+            position: absolute;
+        }
+    
+        @keyframes fall {
+            0% {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(100%);
+            }
+        }
+    
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+    
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 10px;
+        }
+    
+        ::-webkit-scrollbar-thumb {
+            background: #00ff00;
+            border-radius: 10px;
+        }
+    
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00ff00;
+        }
+
+        .text-container {
+            font-size: 24px;
+            font-weight: bold;
+            float: right;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            background-color: white;
+            animation: blink 0.8s step-end infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .text {
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            animation: typing 4s steps(24) 1s forwards;
+        }
+
+        .second-text .text {
+            display: none;
+            animation: typing 0s steps(24) 0s forwards;
+        }
+
+        @keyframes typing {
+            to {
+                width: 100%;
+            }
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="matrix-stream">
+        <!-- Generating random characters for the visual effect -->
+    </div>
+
+    <div class="container">
+        <h1>Senior Backend Engineer</h1>
+        <div class="text-container">
+            <span class="text"></span><span class="cursor">|</span>
+        </div>
+        <div class="text-container second-text">
+            <span class="text">Knock, knock, Neo.</span>
+        </div>
+
+        <div class="contact-info section">
+            <h2>Контактная информация</h2>
+            <ul>
+                <li><span class="bold">Возраст:</span> 36 лет (9 июня 1988)</li>
+                <li><span class="bold">Местоположение:</span> Ереван</li>
+                <li><span class="bold">Готов к релокации:</span> Европа, США</li>
+                <li><span class="bold">Гражданство:</span> Армения</li>
+                <li><span class="bold">Телефон:</span> +374 (77) 089753</li>
+                <li><span class="bold">Telegram:</span> @superslimfeel</li>
+                <li><span class="bold">Email:</span> artur.yudin@gmail.com</li>
+            </ul>
+        </div>
+
+        <div class="expected-conditions section">
+            <h2>Ожидаемые условия</h2>
+            <p class="highlight"><span class="bold">Ожидаемая месячная зарплата:</span> 6000 USD</p>
+            <p><span class="bold">Тип занятости:</span> Полная занятость, Удаленно</p>
+            <p><span class="bold">График:</span> Полный рабочий день, Гибкий</p>
+        </div>
+
+        <div class="skills section">
+            <h2>Ключевые навыки</h2>
+            <ul>
+                <li><span class="bold">Языки программирования:</span> <span class="highlight">Go (4+ года)</span>, <span class="highlight">TypeScript/Node.js/JavaScript (3+ года)</span>, <span class="highlight">Python (1+ год)</span>, Unix Shell, Ruby</li>
+                <li><span class="bold">Базы данных:</span> <span class="highlight">PostgreSQL</span>, <span class="highlight">Elasticsearch</span>, Redis, MongoDB, ClickHouse (базовый)</li>
+                <li><span class="bold">Технологии и инструменты:</span> Git, <span class="highlight">Docker</span>, <span class="highlight">Kubernetes</span>, <span class="highlight">gRPC</span>, <span class="highlight">GitLab CI/CD</span>, Kafka, <span class="highlight">Zabbix</span>, ELK, <span class="highlight">Prometheus</span>, <span class="highlight">Grafana</span>, <span class="highlight">Jira</span></li>
+                <li><span class="bold">Архитектура и проектирование:</span> Микросервисная архитектура, Системы с высокой нагрузкой, ООП (Объектно-ориентированное программирование)</li>
+                <li><span class="bold">Тестирование:</span> Модульное тестирование, Интеграционное тестирование, E2E (Сквозное) тестирование, TDD (Разработка через тестирование)</li>
+                <li><span class="bold">Методы разработки:</span> GitLab CI/CD (Непрерывная интеграция/Непрерывная доставка)</li>
+                <li><span class="bold">Методологии и практики:</span> Scrum, Kanban, Парное программирование, Ревью кода</li>
+                <li><span class="bold">Другие навыки:</span> Оптимизация баз данных, Информационная безопасность, Проектирование архитектуры систем</li>
+                <li><span class="bold">Языки:</span> Русский (Родной), Армянский (Родной), Английский (B2)</li>
+            </ul>
+        </div>
+
+        <div class="experience section">
+            <h2>Опыт работы</h2>
+            <h3>
+                Senior Backend Engineer — <span class="bold">Wildberries Marketplace</span> (Октябрь 2023 — Июнь 2024)
+            </h3>
+            <ul>
+                <li>Разработка системы аутентификации на <span class="highlight">Go</span> с использованием микросервисной архитектуры. <span class="highlight">Система обрабатывает 10 000 - 50 000 запросов в секунду в часы пиковой нагрузки</span>.</li>
+                <li>Интеграция с OAuth-провайдерами (VK, Google, Yandex). <span class="highlight">Более 50% пользователей аутентифицируются через OAuth</span>.</li>
+                <li>Рефакторинг и оптимизация кода. <span class="highlight">Сократил время отклика на 30% за счет оптимизации запросов к базе данных</span>.</li>
+                <li>Разработка сервисных эндпоинтов на <span class="highlight">Go</span>.</li>
+                <li>Настройка CI/CD для stage/prod с использованием <span class="highlight">GitLab CI/CD</span>. <span class="highlight">Сократил время развертывания с 2 часов до 15 минут</span>. Развертывание в <span class="highlight">Kubernetes</span>.</li>
+                <li>Поддержка документации и тесты. <span class="highlight">Увеличил покрытие тестами до 90%</span>.</li>
+                <li>Участие в дежурствах, мониторинг с помощью <span class="highlight">Prometheus</span> и <span class="highlight">Grafana</span>.</li>
+            </ul>
+
+            <h3>
+                Senior Backend Engineer — <span class="bold">MAG Development</span> (Март 2022 — Март 2023)
+            </h3>
+            <ul>
+                <li>Разработал высоконагруженную систему авторизации на <span class="highlight">Go</span> с использованием микросервисной архитектуры. <span class="highlight">Обрабатывает до 10 000 запросов в секунду.</span></li>
+                <li>Оптимизировал хранение данных с использованием Redis и PostgreSQL.</li>
+                <li>Реализовал межсервисное взаимодействие через gRPC.</li>
+                <li>Внедрил CI/CD пайплайны с использованием Docker и Git.</li>
+            </ul>
+
+            <h3>
+                Senior Backend Engineer — <span class="bold">Kaspersky Lab</span> (Март 2021 — Март 2022)
+            </h3>
+            <ul>
+                <li>Разработал бэкенд-часть проекта TAL на <span class="highlight">Go</span>.</li>
+                <li>Использовал <span class="highlight">Elasticsearch</span> для хранения и анализа событий безопасности.</li>
+                <li>Поддерживал и улучшал существующие продукты.</li>
+                <li>Успешно сдал новый проект.</li>
+            </ul>
+
+            <h3>
+                Backend Engineer — <span class="bold">IP Chain</span> (Июнь 2019 — Март 2021)
+            </h3>
+            <ul>
+                <li>Перешел с монолита на микросервисную архитектуру на <span class="highlight">Go</span>.</li>
+                <li>Оптимизировал CI/CD.</li>
+                <li>Разработал алгоритм распознавания образов с использованием нейронных сетей.</li>
+                <li>Разработал API-инструменты для управления браузером Chrome на <span class="highlight">Go</span>.</li>
+                <li>Оптимизировал архитектуру базы данных (PostgreSQL). <span class="highlight">Сократил время отклика на 50%</span>.</li>
+            </ul>
+
+            <h3>
+                Lead Backend Engineer — <span class="bold">Insight Agency</span> (Апрель 2017 — Сентябрь 2018)
+            </h3>
+            <ul>
+                <li>Разработал высоконагруженные бэкенд-системы для веб-сайтов: cni.ru, theartofshaving.ru, ch1ef.ru на <span class="highlight">Node.js (TypeScript)</span>. <span class="highlight">Веб-сайты обслуживали до 50 000 уникальных посетителей в день.</span></li>
+                <li>Создал системы бронирования и API для интеграции с внешними сервисами на <span class="highlight">Node.js (TypeScript)</span>. <span class="highlight">Разработанные API обрабатывали до 1000 запросов в минуту.</span></li>
+                <li><span class="highlight">Руководил командой из 5 разработчиков.</span> <span class="highlight">Повысил производительность команды на 30% за счет внедрения Agile-методологий и использования <span class="highlight">Jira</span> для управления задачами.</span></li>
+            </ul>
+        </div>
+
+        <div class="projects section">
+            <h2>Проекты на Python</h2>
+            <ul>
+                <li>
+                    <span class="bold">Парсер данных конкурентов (Python, Scrapy, PostgreSQL)</span><br>
+                    Разработал парсер для сбора и анализа данных о ценах и продуктах конкурентов в секторе электронной коммерции.
+                    <ul>
+                        <li>Использовал Scrapy для сбора данных с веб-сайтов.</li>
+                        <li>Сохранял данные в PostgreSQL для дальнейшего анализа.</li>
+                        <li><span class="highlight">Автоматизировал процесс сбора данных, сэкономив до 20 часов в неделю.</span></li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="bold">Система рекомендаций продуктов (Python, Pandas, Scikit-learn)</span><br>
+                        Создал систему рекомендаций продуктов для интернет-магазина на основе анализа покупательского поведения.
+                    <ul>
+                        <li>Использовал Pandas для обработки и анализа данных о покупках.</li>
+                        <li>Применил алгоритмы машинного обучения из Scikit-learn для построения рекомендательной модели.</li>
+                        <li><span class="highlight">Внедрение системы увеличило среднюю стоимость заказа на 15%.</span></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="education section">
+            <h2>Образование</h2>
+            <p><span class="bold">Национальный политехнический университет Армении</span> (2006)</p>
+            <p>Факультет: Программное обеспечение для вычислительной техники и автоматизированных систем (Неоконченное высшее образование)</p>
+        </div>
+
+        <div class="about section">
+            <h2>Обо мне</h2>
+            <p>Стремлюсь к постоянному развитию и изучению новых технологий. Меня интересуют проекты, связанные с высоконагруженными системами и большими данными. Я увлечен изучением возможностей человека и тем, как технологии могут помочь их расширить.</p>
+        </div>
+
+        <div class="recommendations section">
+            <h2>Рекомендации</h2>
+            <ul>
+                <li><span class="bold">Даниил Проценко</span>, Старший архитектор, Лаборатория Касперского</li>
+                <li><span class="bold">Владимир Гришин</span>, Ведущий Бэкенд-разработчик, IP Chain</li>
+                <li><span class="bold">Жанна Гиттельсон</span>, Менеджер проектов, Insight Agency</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const streamContainer = document.querySelector('.matrix-stream');
+    
+        // Function to generate a random number within a given range
+        const random = (min, max) => Math.random() * (max - min) + min;
+    
+        // Create streams of characters
+        const fragment = document.createDocumentFragment(); // Fragment for a single addition
+    
+        for (let i = 0; i < 80; i++) {
+            const column = document.createElement('div');
+            column.classList.add('matrix-column');
+            column.style.left = `${random(0, 100)}%`;
+            column.style.animationDelay = `${random(0, 10)}s`;
+    
+            const charFragment = document.createDocumentFragment(); // Fragment for characters
+            for (let j = 0; j < 20; j++) {
+                const char = document.createElement('span');
+                char.textContent = String.fromCharCode(0x30A0 + random(0, 96));
+                char.classList.add('matrix-char'); // Add a class instead of inline style
+                char.style.animationDuration = `${random(3, 53)}s`;
+                charFragment.appendChild(char);
+            }
+            column.appendChild(charFragment);
+            fragment.appendChild(column);
+        }
+    
+        streamContainer.appendChild(fragment); // Add everything at once
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstTextElement = document.querySelector('.text');
+            const secondTextElement = document.querySelector('.second-text .text');
+            const cursorElement = document.querySelector('.cursor');
+            
+            const text1 = 'Follow the white rabbit.';
+            
+            let i = 0;
+
+            function typeText(element, text, callback) {
+                let j = 0;
+                function type() {
+                    if (j < text.length) {
+                        element.textContent += text.charAt(j);
+                        j++;
+                        setTimeout(type, 50);
+                    } else if (callback) {
+                        callback();
+                    }
+                }
+                type();
+            }
+
+            function beep() {
+                var snd = new Audio("data:audio/wav;base64,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qJrx4KOQjahZxWbcZgztj2c49nKmkId44S71j0c8eV9yDK6uPRzx5X18eDvjvQ6yKo9ZSS6l//8elePK/Lf//IInrOF/FvDoADYAGBMGb7FtErm5MXMlmPAJQVgWta7Zx2go+8xJ0UiCb8LHHdftWyLJE0QIAIsI+UbXu67dZMjmgDGCGl1H+vpF4NSDckSIkk7Vd+sxEhBQMRU8j/12UIRhzSaUdQ+rQU5kGeFxm+hb1oh6pWWmv3uvmReDl0UnvtapVaIzo1jZbf/pD6ElLqSX+rUmOQNpJFa/r+sa4e/pBlAABoAAAAA3CUgShLdGIxsY7AUABPRrgCABdDuQ5GC7DqPQCgbbJUAoRSUj+NIEig0YfyWUho1VBBBA//uQZB4ABZx5zfMakeAAAAmwAAAAF5F3P0w9GtAAACfAAAAAwLhMDmAYWMgVEG1U0FIGCBgXBXAtfMH10000EEEEEECUBYln03TTTdNBDZopopYvrTTdNa325mImNg3TTPV9q3pmY0xoO6bv3r00y+IDGid/9aaaZTGMuj9mpu9Mpio1dXrr5HERTZSmqU36A3CumzN/9Robv/Xx4v9ijkSRSNLQhAWumap82WRSBUqXStV/YcS+XVLnSS+WLDroqArFkMEsAS+eWmrUzrO0oEmE40RlMZ5+ODIkAyKAGUwZ3mVKmcamcJnMW26MRPgUw6j+LkhyHGVGYjSUUKNpuJUQoOIAyDvEyG8S5yfK6dhZc0Tx1KI/gviKL6qvvFs1+bWtaz58uUNnryq6kt5RzOCkPWlVqVX2a/EEBUdU1KrXLf40GoiiFXK///qpoiDXrOgqDR38JB0bw7SoL+ZB9o1RCkQjQ2CBYZKd/+VJxZRRZlqSkKiws0WFxUyCwsKiMy7hUVFhIaCrNQsKkTIsLivwKKigsj8XYlwt/WKi2N4d//uQRCSAAjURNIHpMZBGYiaQPSYyAAABLAAAAAAAACWAAAAApUF/Mg+0aohSIRobBAsMlO//Kk4soosy1JSFRYWaLC4qZBYWFRGZdwqKiwkNBVmoWFSJkWFxX4FFRQWR+LsS4W/rFRb/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////VEFHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAU291bmRib3kuZGUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMjAwNGh0dHA6Ly93d3cuc291bmRib3kuZGUAAAAAAAAAACU=");  
+                snd.play();
+            }
+
+            typeText(firstTextElement, text1, function() {
+                setTimeout(function() {
+                    firstTextElement.style.display = 'none';
+                    beep();
+                    secondTextElement.style.display = 'block';
+                    new Promise(resolve => setTimeout(beep, 333));
+                }, 3000);
+            });
+        });
+    </script>
+</body>
+</html>
